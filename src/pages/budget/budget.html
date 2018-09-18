@@ -23,7 +23,7 @@
     <div ion-row  justify-content-center class="clearbg">
     <ion-card ion-col col-lg-8>
         <ion-label text-wrap stacked color="primary">
-            <h1 ion-text color="dark">Income and Food Expenses</h1>
+            <h1 ion-text color="dark">Income and Beauty Expenses</h1>
         </ion-label>
 
         <ion-card>
@@ -51,7 +51,7 @@
                     <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3F>
                         <ion-item>
                             <ion-label text-wrap stacked color="primary">
-                                Budget for food per month (KES)?
+                                Budget for beauty per month (KES)?
                             </ion-label>
                             <ion-select [(ngModel)]="foodbudget">
                                  <ion-option value='' [disabled]="true">-- Select --</ion-option>
@@ -65,7 +65,7 @@
                     <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3F>
                         <ion-item>
                             <ion-label text-wrap stacked color="primary">
-                                Daily lunch expenses (KES)?
+                                A good hairstyle should cost (KES)?
                             </ion-label>
                             <ion-select  [(ngModel)]="lunch">
                                  <ion-option value='' [disabled]="true">-- Select --</ion-option>
@@ -82,7 +82,7 @@
                     <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3F>
                         <ion-item>
                             <ion-label text-wrap stacked color="primary"> 
-                                Would you like to have someone/somewhere you can pay for all your daily lunches in advance?
+                                Would you like to be able to book beauty services in advance?
                             </ion-label>
                             <ion-select [(ngModel)]="paylunch">
                                  <ion-option value='' [disabled]="true">-- Select --</ion-option>
@@ -94,7 +94,7 @@
                     <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3F>
                         <ion-item>
                             <ion-label text-wrap stacked color="primary">
-                                A good lunch should cost (KES)?
+                                A good manicure & pedicure combo should cost (KES)?
                             </ion-label>
                             <ion-select [(ngModel)]="lunchcost">
                                 <ion-option value='' [disabled]="true">-- Select --</ion-option>
@@ -102,6 +102,22 @@
                                 <ion-option value="100-300">100-300</ion-option>
                                 <ion-option value="300-700">300-700</ion-option>
                                 <ion-option value="700">Above 700</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+                    </ion-col>
+
+                    <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3F>
+                        <ion-item>
+                            <ion-label text-wrap stacked color="primary">
+                                How much did you spend on beauty last month?
+                            </ion-label>
+                            <ion-select [(ngModel)]="last_month_expense">
+                                <ion-option value='' [disabled]="true">-- Select --</ion-option>
+                                <ion-option value="5000">Below 5,000</ion-option>
+                                <ion-option value="5000-10000">5,000 - 10,000</ion-option>
+                                <ion-option value="10000-20000">10,000 - 20,000</ion-option>
+                                <ion-option value="20000">Above 20,000</ion-option>
                             </ion-select>
                         </ion-item>
 
