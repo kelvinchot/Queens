@@ -19,11 +19,12 @@ import { LifestylePage } from '../lifestyle/lifestyle';
 })
 
 export class BudgetPage {
-    monthlyearnings: string = "";
-    foodbudget: string = "";
-    lunch: string = "";
-    paylunch: string = "";
-    lunchcost: string = "";
+    monthly_earnings: string = "";
+    monthly_beauty_budget: string = "";
+    hairstyle_cost: string = "";
+    advance_booking: string = "";
+    manipedi_cost: string = "";
+    last_month_expense: string = "";
     alreadySaved: false;
 
     budgetList: AngularFireList<any>;
@@ -39,16 +40,17 @@ export class BudgetPage {
             return; // this tab is not completely filled
         }else if (this.alreadySaved)
         return;
-        this.nextTab(this.monthlyearnings, this.foodbudget, this.lunch, this.paylunch, this.lunchcost);
+        this.nextTab();
     }
 
     hasNulls(): boolean {
         if (
-            this.globals.isNullVal(this.monthlyearnings) ||
-            this.globals.isNullVal(this.foodbudget) ||
-            this.globals.isNullVal(this.lunch) ||
-            this.globals.isNullVal(this.paylunch) ||
-            this.globals.isNullVal(this.lunchcost)
+            this.globals.isNullVal(this.monthly_earnings) ||
+            this.globals.isNullVal(this.monthly_beauty_budget) ||
+            this.globals.isNullVal(this.hairstyle_cost) ||
+            this.globals.isNullVal(this.advance_booking) ||
+            this.globals.isNullVal(this.last_month_expense) ||
+            this.globals.isNullVal(this.manipedi_cost)
         ) {
             return true;
         }
@@ -56,7 +58,7 @@ export class BudgetPage {
         return false;
     }
 
-    nextTab(monthlyearnings, foodbudget, lunch, paylunch, lunchcost) {
+    nextTab() {
 
         if (this.hasNulls()) {
             this.globals.showToast('Please answer all questions.');
@@ -64,11 +66,12 @@ export class BudgetPage {
         }
 
         let data = {
-            monthlyearnings: this.monthlyearnings,
-            foodbudget: this.foodbudget,
-            lunch: this.lunch,
-            paylunch: this.paylunch,
-            lunchcost: this.lunchcost
+            monthly_earnings: this.monthly_earnings,
+            monthly_beauty_budget: this.monthly_beauty_budget,
+            hairstyle_cost: this.hairstyle_cost,
+            advance_booking: this.advance_booking,
+            manipedi_cost: this.manipedi_cost,
+            last_month_expense: this.last_month_expense
 
         };
 

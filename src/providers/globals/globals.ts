@@ -1,99 +1,39 @@
 import { Injectable } from '@angular/core';
-import { AlertController, Tabs, ToastController, Alert } from 'ionic-angular';
-import {
-    RealEstateAsset, VehicleAsset, OtherAsset, BankAccount, UnitTrust,
-    RetirementSaving, RegularSaving, EmployeeBenefit, GroupEmployeeBenefit
-} from '../../pages/investments/investments';
+import { AlertController, Tabs, ToastController, Alert, Toast } from 'ionic-angular';
 
-/*  
-  Generated class for the GlobalsProvider provider.
-
+/**
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 
-interface Person {
-    first_name: string, middle_name: string, surname: string, dob: string,
-    marital_status: string, occupation: string, employer: string
-}
-
-interface Child {
-    name: string, dob: string, fee_balance_pri: number,
-    fee_balance_sec: number, fee_balance_uni: number
-}
-
-interface Loan {
-    type: string, institution: string, repaymentAmount: number, frequency: 0, outstanding: number, is_mortgage: boolean
-}
-interface MonthlyExpense {
-    rent: number, utilities: number, food: number, clothing: number, transport: number,
-    entertainment: number, others: number
-}
-interface ExtraIncome {
-    source: string; amount: number; frequency: 0;
-}
-interface Income {
-    principle: number; spouse: number;
-    extra: ExtraIncome[]
-}
-
+/**
+ * GlobalsProvider provider -- we define here the variables, services, and helper functions
+ * we want to be able to access globally
+ */
 @Injectable()
 export class GlobalsProvider {
-    monthlyearnings: any;
-    foodbudget: any;
-    lunch: any;
-    paylunch: any;
-    lunchcost: any;
-    takeaway: string = "any";
-    variety: string = "any";
-    likelunch: string = "any";
-    lunchkesho: string = "any";
-    work: string = "any";
-    lunches: string = "any";
-    reason: string = "any";
-    challenges: string = "any";
-    lunchi: string = "any";
-    lunchvalue: string = "any";
-    onlinefrom: string = "any";
-    office: string = "any";
-    home: string = "any";
-    challenge: string = "any";
-    missed: string = "any";
-    phone: string = "any";
-    email: string = "any";
 
-    childrenDetails: Child[];
-    spouseDetails: Person;
-    principleDetails: Person;
-    income: { income: Income, extra: ExtraIncome[] };
-    contacts: any;
-    public firebaseRef: string;
-    public isFinishReady: boolean = false;
-    public isBudgetReady: boolean = false;
-    public isLifestyleReady: boolean = false;
 
-    expenses: { monthlyExpenses: MonthlyExpense, loanExpenses: Loan[] };
-    investments: {
-        realEstateAssets: RealEstateAsset[],
-        otherAssets: OtherAsset[],
-        vehicleAssets: VehicleAsset[],
-        bankAccounts: BankAccount[],
-        //            saccoAccounts: this.saccoAccountsJSON,
-        unitTrusts: UnitTrust[],
-        //            shares: this.sharesJSON,
-        retirementSavings: RetirementSaving[],
-        regularSavings: RegularSaving[],
-        employeeBenefits: EmployeeBenefit[],
-        groupEmployeeBenefits: GroupEmployeeBenefit[]
-    };
-    confirmation: any;
+    public firebaseRef: string; // use one Firebase key to store the data for each tab
+    public isFinishReady: boolean = false; // true if Finish tab is completely filled
+    public isBudgetReady: boolean = false; // true if Budget tab is completely filled
+    public isLifestyleReady: boolean = false; // true if Lifestyle tab is completely filled
 
-    tabs: Tabs;
-
+    /**
+     * Constructor -- Perform dependency injection
+     * @param alertController inject a reference to the AlertController so we can create/show alert dialogs
+     * @param toastCtrl inject a reference to the ToastController so we can create/show toasts
+     */
     constructor(private alertController: AlertController, public toastCtrl: ToastController) {
         console.log('Hello GlobalsProvider Provider');
     }
 
+    /**
+     * Create and show an alert on screen
+     * @param title the title of the alert box shown
+     * @param message the text to display on the alert message box
+     * @returns a reference to the Alert object that was created and is being displayed
+     */
     showAlert(title: string, message: string) : Alert {
 
         let alert = this.alertController.create({
@@ -106,6 +46,12 @@ export class GlobalsProvider {
         return alert;
     }
 
+    /**
+     * Checks if a person born on a given date has reached a certain age already
+     * @param date 
+     * @param age 
+     * @returns true if person born on given date has reached specified age
+     */
     isAgeCorrect(date: string, age: number = 18): boolean {
         let argDateMillis = Date.parse(date);
 
@@ -128,39 +74,23 @@ export class GlobalsProvider {
         } else
             return false;
     }
-    isBlank1(missed: string): boolean {
-        return missed != null && missed.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
 
-    isBlank2(lunch: string): boolean {
-        return lunch != null && lunch.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
-    isBlank3(office: string): boolean {
-        return office != null && office.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
-    isBlank4(home: string): boolean {
-        return home != null && home.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
-    isBlank5(takeaway: string): boolean {
-        return takeaway != null && takeaway.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
-    isBlank6(work: string): boolean {
-        return work != null && work.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
-    isBlank7(food: string): boolean {
-        return food != null && food.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
-    isBlank8(challenge: string): boolean {
-        return challenge != null && challenge.match(/^[a-zA-Z0-9\s]+$/) != null;
-    }
-
-
+    /**
+     * Checks if given phone number is Kenyan i.e. if it matches the pattern 07xxxxxxxx where x is 0-9
+     * @param phoneNumber the string to check if is a correct phone number
+     * @returns true if phoneNumber is a valid Kenyan number
+     */
     public isValidPhone(phoneNumber: string): boolean {
         return phoneNumber != null && (phoneNumber.match(/^[0-9]+$/) != null ||
             phoneNumber.match(/^\+07[0-9]{8}$/) != null); // force phone # format to be 07xxxxxxxx
     }
 
-
+    /**
+     * Checks if a given string is a correct whole number amount
+     * @param amount the string to verify if is amount
+     * @param canBeNegative a flag to allow number to be negative, else negative amounts are detected as invalid
+     * @returns true if amount parameter is a valid amount
+     */
     isValidAmount(amount: string, canBeNegative: boolean = false): boolean {
         if (canBeNegative) {
             return amount != null && amount.match(/^-?[0-9]+$/) != null;
@@ -168,20 +98,21 @@ export class GlobalsProvider {
         return amount != null && amount.match(/^[0-9]+$/) != null;
     }
 
+    /**
+     * Check if a string is a valid email address
+     * @param email the string to verify if is a valid email address
+     * @returns true if param email is valid email address
+     */
     isValidEmail(email: string): boolean {
         return email != null
             && email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/) != null;
     }
 
-    removeItem(children: [any], i: number) {
-        console.log(children);
-        children.splice(i, 1);
-    }
-
-    setCurrentTabName(activeTab: Tabs) {
-        activeTab.name = "Fuck That Nigga";
-    }
-
+    /**
+     * Check if the string passed is either null or an empty string ""
+     * @param value the string to validate
+     * @returns true if passed value is a null or empty strinh
+     */
     isNullVal(value: string): boolean {
         if (value != null && !(''.trim()).match(value)) {
             return false; // string is empty
@@ -189,7 +120,15 @@ export class GlobalsProvider {
         return true;
     }
 
-    showToast(message: string, position: string = 'middle', duration: number = 3000, dismissBtnText: string = 'Dismiss') {
+    /**
+     * Create and show a toast message on screen
+     * @param message string message to display in the toast
+     * @param position (top|middle|bottom) the position of the toast on screen, default is middle
+     * @param duration the number of milliseconds to show the toast b4 dismissing it, default is 3000ms (i.e. 3s)
+     * @param dismissBtnText text to show on toast's dismiss button, default is Dismiss
+     * @returns a reference to the Toast object created and displayed
+     */
+    showToast(message: string, position: string = 'middle', duration: number = 3000, dismissBtnText: string = 'Dismiss') : Toast {
         
         let toast = this.toastCtrl.create({
             message: message,
@@ -199,7 +138,7 @@ export class GlobalsProvider {
             closeButtonText: dismissBtnText
             // dismissOnPageChange: true
         });
-
         toast.present();
+        return toast;
     }
 }

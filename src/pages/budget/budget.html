@@ -38,7 +38,7 @@
                                 How much do you earn per month (KES)?
                             </ion-label>
                             <ion-header>Monthly earnings</ion-header>
-                            <ion-select [(ngModel)]="monthlyearnings">
+                            <ion-select [(ngModel)]="monthly_earnings">
                                 <ion-option value='' [disabled]="true">-- Select --</ion-option>
                                 <ion-option value="10000">Below 10,000</ion-option>
                                 <ion-option value="10000-20000">10,000 - 20,000</ion-option>
@@ -53,7 +53,7 @@
                             <ion-label text-wrap stacked color="primary">
                                 Budget for beauty per month (KES)?
                             </ion-label>
-                            <ion-select [(ngModel)]="foodbudget">
+                            <ion-select [(ngModel)]="monthly_beauty_budget">
                                  <ion-option value='' [disabled]="true">-- Select --</ion-option>
                                 <ion-option value="5000">Below 5,000</ion-option>
                                 <ion-option value="5000-10000">5,000 - 10,000</ion-option>
@@ -67,7 +67,7 @@
                             <ion-label text-wrap stacked color="primary">
                                 A good hairstyle should cost (KES)?
                             </ion-label>
-                            <ion-select  [(ngModel)]="lunch">
+                            <ion-select  [(ngModel)]="hairstyle_cost">
                                  <ion-option value='' [disabled]="true">-- Select --</ion-option>
                                 <ion-option value="100">Below 100</ion-option>
                                 <ion-option value="100-300">100 - 300</ion-option>
@@ -84,7 +84,7 @@
                             <ion-label text-wrap stacked color="primary"> 
                                 Would you like to be able to book beauty services in advance?
                             </ion-label>
-                            <ion-select [(ngModel)]="paylunch">
+                            <ion-select [(ngModel)]="advance_booking">
                                  <ion-option value='' [disabled]="true">-- Select --</ion-option>
                                 <ion-option value="0">No</ion-option>
                                 <ion-option value="1">Yes</ion-option>
@@ -96,7 +96,7 @@
                             <ion-label text-wrap stacked color="primary">
                                 A good manicure & pedicure combo should cost (KES)?
                             </ion-label>
-                            <ion-select [(ngModel)]="lunchcost">
+                            <ion-select [(ngModel)]="manipedi_cost">
                                 <ion-option value='' [disabled]="true">-- Select --</ion-option>
                                 <ion-option value="100">Below 100</ion-option>
                                 <ion-option value="100-300">100-300</ion-option>
@@ -129,7 +129,7 @@
 
         </ion-card>
        
-        <button color='secondary' ion-button round (click)="nextTab(monthlyearnings,foodbudget,lunch,paylunch,lunchcost)"> Next
+        <button color='secondary' ion-button round (click)="nextTab()"> Next
                          &nbsp;&nbsp;&nbsp;<ion-icon name="ios-arrow-forward"></ion-icon>
             </button>
     </ion-card>
