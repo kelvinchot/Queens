@@ -34,8 +34,8 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  secondary:    #E91E63,
-  secondary-trans:    rgba(233, 30, 99, 0.5),
+  secondary:    #9C27B0,
+  secondary-trans:    rgba(156, 39, 176, 0.5),
   primary:    #C2185B,
   primary-trans:    rgba(194, 24, 91, 0.5),
   danger:     #f53d3d,
@@ -54,6 +54,16 @@ $colors: (
 // .primary-text-color    { color: #212121; }
 // .secondary-text-color  { color: #757575; }
 // .divider-color         { border-color: #BDBDBD; }
+
+
+// $primary-color-dark:   #7B1FA2;
+// $primary-color:        #9C27B0;
+// $primary-color-light:  #E1BEE7;
+// $primary-color-text:   #FFFFFF;
+// $accent-color:         #FF4081;
+// $primary-text-color:   #212121;
+// $secondary-text-color: #757575;
+// $divider-color:        #BDBDBD;
 
 
 

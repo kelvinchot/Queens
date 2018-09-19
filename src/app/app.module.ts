@@ -16,20 +16,11 @@ export const firebaseConfig = {
     messagingSenderId: "73247815828"
 };
 
-import { ExpensesPage } from '../pages/expenses/expenses';
-import { InvestmentsPage } from '../pages/investments/investments';
-import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
-import { ConfirmationPage } from '../pages/confirmation/confirmation';
 import { LifestylePage } from '../pages/lifestyle/lifestyle';
 import { FinishPage } from '../pages/finish/finish';
 import { BudgetPage } from '../pages/budget/budget';
 
-
-
-
-import { DetailsOfPrinciplePage } from '../pages/details-of-principle/details-of-principle';
-import { IncomeDetailsPage } from '../pages/income-details/income-details';
 import { IntroSliderPage } from '../pages/intro-slider/intro-slider';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -38,18 +29,11 @@ import { GlobalsProvider } from '../providers/globals/globals';
 import { AlertService } from '../providers/alert-service/alert-service';
 import {SocialSharing} from '@ionic-native/social-sharing';
 import { IonicStorageModule } from '@ionic/storage';
-import { GlobalProvider } from '../providers/global/global';
 
 @NgModule({
   declarations: [
     MyApp,
-    ExpensesPage,
-    ContactPage,
     TabsPage,
-    DetailsOfPrinciplePage,
-    IncomeDetailsPage,
-    InvestmentsPage,
-    ConfirmationPage,
     LifestylePage,
     IntroSliderPage,
     FinishPage,
@@ -65,13 +49,7 @@ import { GlobalProvider } from '../providers/global/global';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ExpensesPage,
-    ContactPage,
     TabsPage,
-    DetailsOfPrinciplePage,
-    IncomeDetailsPage,
-    InvestmentsPage,
-    ConfirmationPage,
     LifestylePage,
     IntroSliderPage,
     FinishPage,
@@ -82,8 +60,7 @@ import { GlobalProvider } from '../providers/global/global';
     SplashScreen,
     Firebase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GlobalsProvider, AlertService, SocialSharing,
-    GlobalProvider
+    GlobalsProvider, AlertService, SocialSharing
   ]
 })
 export class AppModule {}

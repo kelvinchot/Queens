@@ -13,7 +13,6 @@ import { AlertController, Tabs, ToastController, Alert, Toast } from 'ionic-angu
 @Injectable()
 export class GlobalsProvider {
 
-
     public firebaseRef: string; // use one Firebase key to store the data for each tab
     public isFinishReady: boolean = false; // true if Finish tab is completely filled
     public isBudgetReady: boolean = false; // true if Budget tab is completely filled
