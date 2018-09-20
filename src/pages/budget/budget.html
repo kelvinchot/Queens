@@ -22,9 +22,19 @@
             
     <div ion-row  justify-content-center class="clearbg">
     <ion-card ion-col col-lg-8>
+
         <ion-label text-wrap stacked color="primary">
-            <h1 ion-text color="dark">Income and Food Expenses</h1>
+           
+            <h1 ion-text color="dark">
+                {{ title }}
+            </h1>
         </ion-label>
+        <ion-select [(ngModel)]="language" (ionChange)="changeLanguage()">
+       <ion-option value="en" selected="true">English</ion-option>
+       <ion-option value="de">German</ion-option>
+       <ion-option value="es">Spanish</ion-option>
+       <ion-option value="fr">French</ion-option>
+    </ion-select>
 
         <ion-card>
             

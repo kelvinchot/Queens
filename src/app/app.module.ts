@@ -6,6 +6,11 @@ import { Firebase } from '@ionic-native/firebase';
 //angularfire imports
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { HttpModule, Http } from '@angular/http';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyC9sv-EILi-uaNNPj6R2otHryoAF_EIwcg",
@@ -39,6 +44,9 @@ import { AlertService } from '../providers/alert-service/alert-service';
 import {SocialSharing} from '@ionic-native/social-sharing';
 import { IonicStorageModule } from '@ionic/storage';
 import { GlobalProvider } from '../providers/global/global';
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
 
 @NgModule({
   declarations: [
@@ -57,7 +65,15 @@ import { GlobalProvider } from '../providers/global/global';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+    }),
+     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig), 
         AngularFireDatabaseModule 
@@ -86,4 +102,5 @@ import { GlobalProvider } from '../providers/global/global';
     GlobalProvider
   ]
 })
+
 export class AppModule {}
