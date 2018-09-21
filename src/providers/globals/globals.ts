@@ -62,6 +62,7 @@ export class GlobalsProvider {
     phone: string = "any";
     email: string = "any";
 
+
     childrenDetails: Child[];
     spouseDetails: Person;
     principleDetails: Person;
@@ -71,6 +72,7 @@ export class GlobalsProvider {
     public isFinishReady: boolean = false;
     public isBudgetReady: boolean = false;
     public isLifestyleReady: boolean = false;
+    public language: string;
 
     expenses: { monthlyExpenses: MonthlyExpense, loanExpenses: Loan[] };
     investments: {

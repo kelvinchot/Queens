@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 //import { LifestylePage } from '../pages/lifestyle/lifestyle';
 //import { FinishPage } from '../pages/finish/finish';
+import { GlobalsProvider } from '../providers/globals/globals';
 import { BudgetPage } from '../pages/budget/budget';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -16,9 +17,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MyApp {
   rootPage:any = TabsPage;
+  public language : string;
+
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-      menuCtrl: MenuController, private _translate: TranslateService) {
+      menuCtrl: MenuController, public globals: GlobalsProvider, private _translate: TranslateService) {
     platform.ready().then(() => {
 
 
@@ -34,6 +38,26 @@ export class MyApp {
     });
 
    
+  }
+
+   public changeLanguage() : void
+  {
+    this.globals.language=this.language;
+     this._translateLanguage();
+  }
+
+  private _translateLanguage() : void
+  {
+     this._translate.use(this.language);
+     this._initialiseTranslation();
+  }
+ private _initialiseTranslation() : void
+  {setTimeout(() =>
+     {
+        this.title        = this._translate.instant("home.heading");
+        
+     }, 250);
+      
   }
 
    private _initTranslate()

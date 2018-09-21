@@ -1,7 +1,11 @@
-// src/assets/i18n/en.json
+
 {
 	"home" : {
-		"heading" 		: "Hello world"
-		
+		"heading" 		: "Hello thanks for taking the time.We are planning to launch a food delivery business for home cooked meals and want to hear your opinion",
+		"heading1" 		: "budget"
+
+	},
+	"home2" : {
+		"heading3"		: "How much do you earn per month(ksh)?"
 	}
 }

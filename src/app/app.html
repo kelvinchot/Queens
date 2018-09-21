@@ -30,11 +30,16 @@
         </ion-slides>
 
         <ion-list class="clearbg sidemenu-list">
-            <p style="line-height:1.7em;font-size:20px;">Hello, thanks for taking the time. 
-                We are planning to launch a food delivery business for home cooked meals and want to hear your opinion.</p>
+            <p style="line-height:1.7em;font-size:20px;" translate>{{title | translate }}.</p>
+                <ion-select [(ngModel)]="language" (ionChange)="changeLanguage()">
+       <ion-option value="en" selected="true">English</ion-option>
+       <ion-option value="swa">Kiswahili</ion-option>
+       
+    </ion-select>
         <button ion-button round color="primary" menuToggle right> Start
             &nbsp;&nbsp;&nbsp;<ion-icon name="arrow-forward"></ion-icon>
         </button>
+        
         </ion-list>
 
 
