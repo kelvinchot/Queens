@@ -28,6 +28,8 @@ export class BudgetPage {
     manipedi_cost: string = "";
     last_month_expense: string = "";
      public title : string;
+     public title2 : string;
+
 
     alreadySaved: false;
 
@@ -36,27 +38,31 @@ export class BudgetPage {
         public globals: GlobalsProvider,
         public afDatabase: AngularFireDatabase,private _translate: TranslateService) {
         this.budgetList = afDatabase.list('/budget');
+        this.language= this.globals.language;
     }
 
-  public ionViewDidLoad() : void
+ 
+
+
+ public ionViewDidLoad() : void
   {
-     this._initialiseTranslation();
-  }
-   public changeLanguage() : void
-  {
+
      this._translateLanguage();
   }
+   
 
   private _translateLanguage() : void
   {
      this._translate.use(this.language);
      this._initialiseTranslation();
   }
-  private _initialiseTranslation() : void
-  {
+ private _initialiseTranslation() : void
+  {setTimeout(() =>
+     {
+        this.title1        = this._translate.instant("home.heading1");
+        this.title2        = this._translate.instant("home2.heading3");
         
-        this.title = this._translate.instant("home.heading");
-        
+     }, 250);
       
   }
 

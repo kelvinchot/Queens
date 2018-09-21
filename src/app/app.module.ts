@@ -34,7 +34,6 @@ import { GlobalsProvider } from '../providers/globals/globals';
 import { AlertService } from '../providers/alert-service/alert-service';
 import {SocialSharing} from '@ionic-native/social-sharing';
 import { IonicStorageModule } from '@ionic/storage';
-import { GlobalProvider } from '../providers/global/global';
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }

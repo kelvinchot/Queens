@@ -25,16 +25,11 @@
 
         <ion-label text-wrap stacked color="primary">
            
-            <h1 ion-text color="dark" >
-                {{ title  }}
+            <h1 ion-text color="dark" translate>
+                {{ title1 | translate }}
             </h1>
         </ion-label>
-        <ion-select [(ngModel)]="language" (ionChange)="changeLanguage()">
-       <ion-option value="en" selected="true">English</ion-option>
-       <ion-option value="de">German</ion-option>
-       <ion-option value="es">Spanish</ion-option>
-       <ion-option value="fr">French</ion-option>
-    </ion-select>
+        
 
         <ion-card>
             
@@ -44,8 +39,8 @@
                     <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3F>
                      
                         <ion-item>
-                            <ion-label text-wrap stacked color="primary"> 
-                                How much do you earn per month (KES)?
+                            <ion-label text-wrap stacked color="primary" translate> 
+                                {{title2 | translate}}
                             </ion-label>
                             <ion-header>Monthly earnings</ion-header>
                             <ion-select [(ngModel)]="monthly_earnings">
