@@ -1,0 +1,7 @@
+// src/assets/i18n/en.json
+{
+	"home" : {
+		"heading" 		: "Hello world"
+		
+	}
+}

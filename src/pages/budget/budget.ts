@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GlobalsProvider } from '../../providers/globals/globals';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { LifestylePage } from '../lifestyle/lifestyle';
+import { TranslateService } from '@ngx-translate/core';
+
 
 /**
 * Generated class for the BudgetPage page.
@@ -25,16 +27,41 @@ export class BudgetPage {
     advance_booking: string = "";
     manipedi_cost: string = "";
     last_month_expense: string = "";
+     public title : string;
+
     alreadySaved: false;
 
     budgetList: AngularFireList<any>;
     constructor(public navCtrl: NavController, public navParams: NavParams,
         public globals: GlobalsProvider,
-        public afDatabase: AngularFireDatabase) {
+        public afDatabase: AngularFireDatabase,private _translate: TranslateService) {
         this.budgetList = afDatabase.list('/budget');
     }
 
+  public ionViewDidLoad() : void
+  {
+     this._initialiseTranslation();
+  }
+   public changeLanguage() : void
+  {
+     this._translateLanguage();
+  }
+
+  private _translateLanguage() : void
+  {
+     this._translate.use(this.language);
+     this._initialiseTranslation();
+  }
+  private _initialiseTranslation() : void
+  {
+        
+        this.title = this._translate.instant("home.heading");
+        
+      
+  }
+
     ionViewDidLeave() {
+
         if (this.hasNulls()) {
             this.globals.showToast("Please answer all questions in the \'Budget\' tab");
             return; // this tab is not completely filled
@@ -90,4 +117,12 @@ export class BudgetPage {
         });
         this.navCtrl.parent.select(1);
     }
+      
+
+  
+
+
+
+
+
 }
