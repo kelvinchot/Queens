@@ -54,7 +54,7 @@ export class BudgetPage {
   }
   private _initialiseTranslation() : void
   {
-     
+        
         this.title = this._translate.instant("home.heading");
         
       
