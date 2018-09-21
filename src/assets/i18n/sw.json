@@ -1,0 +1,23 @@
+{
+	"AMOUNT_ABOVE" : "Zaidi ya",
+	"AMOUNT_BELOW" : "Chini ya",
+	"SELECT_HEADING" : "Chagua",
+	"SIDEBAR" : {
+		"WELCOME_TEXT" 		: "Habari, shukrani kwa kuchukua muda wako. Tuna mpango wa kufungua chumba cha mapambo (beauty parlour) na tungependa kusikia maoni yako.",
+		"START_BUTTON" : "Anza"
+	},
+	"TAB": {
+		"BUDGET": {
+			"TITLE" : "Bajeti",
+			"MONTHLY_EARNING": "Unapata pesa ngapi kwa mwezi (KES)?"
+		}, 
+		"LIFESTYLE" : {
+			"TITLE" : "Maisha"
+
+		},
+		"FINISH" : {
+			"TITLE" : "Uthibitisho"
+
+		}
+	}
+}

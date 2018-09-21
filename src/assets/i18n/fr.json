@@ -1,0 +1,23 @@
+{
+	"AMOUNT_ABOVE" : "Au dessus de",
+	"AMOUNT_BELOW" : "Ci-dessous",
+	"SELECT_HEADING" : "Sélectionner",
+	"SIDEBAR" : {
+		"WELCOME_TEXT" 		: "Bonjour, merci d'avoir pris le temps. Nous prévoyons d'ouvrir un salon de beauté et voulons entendre votre opinion.",
+		"START_BUTTON" : "Début"
+	},
+	"TAB": {
+		"BUDGET": {
+			"TITLE" : "Budget",
+			"MONTHLY_EARNING": "Combien gagnez-vous par mois (KES)?"
+		}, 
+		"LIFESTYLE" : {
+			"TITLE" : "Mode de Vie"
+
+		},
+		"FINISH" : {
+			"TITLE" : "Confirmation"
+
+		}
+	}
+}

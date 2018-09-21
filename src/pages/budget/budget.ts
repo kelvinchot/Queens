@@ -27,9 +27,6 @@ export class BudgetPage {
     advance_booking: string = "";
     manipedi_cost: string = "";
     last_month_expense: string = "";
-     public title : string;
-     public title2 : string;
-
 
     alreadySaved: false;
 
@@ -38,41 +35,14 @@ export class BudgetPage {
         public globals: GlobalsProvider,
         public afDatabase: AngularFireDatabase,private _translate: TranslateService) {
         this.budgetList = afDatabase.list('/budget');
-        this.language= this.globals.language;
     }
 
- 
-
-
- public ionViewDidLoad() : void
-  {
-
-     this._translateLanguage();
-  }
-   
-
-  private _translateLanguage() : void
-  {
-     this._translate.use(this.language);
-     this._initialiseTranslation();
-  }
- private _initialiseTranslation() : void
-  {setTimeout(() =>
-     {
-        this.title1        = this._translate.instant("home.heading1");
-        this.title2        = this._translate.instant("home2.heading3");
-        
-     }, 250);
-      
-  }
-
     ionViewDidLeave() {
-
         if (this.hasNulls()) {
             this.globals.showToast("Please answer all questions in the \'Budget\' tab");
             return; // this tab is not completely filled
-        }else if (this.alreadySaved)
-        return;
+        } else if (this.alreadySaved)
+            return;
         this.nextTab();
     }
 
@@ -123,12 +93,4 @@ export class BudgetPage {
         });
         this.navCtrl.parent.select(1);
     }
-      
-
-  
-
-
-
-
-
-}
+  }

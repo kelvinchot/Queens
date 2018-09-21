@@ -17,6 +17,7 @@ export class GlobalsProvider {
     public isFinishReady: boolean = false; // true if Finish tab is completely filled
     public isBudgetReady: boolean = false; // true if Budget tab is completely filled
     public isLifestyleReady: boolean = false; // true if Lifestyle tab is completely filled
+    public currentLanguage: string = "sw"; // current selected language, default to English
 
     /**
      * Constructor -- Perform dependency injection

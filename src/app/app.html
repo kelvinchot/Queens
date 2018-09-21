@@ -30,20 +30,28 @@
         </ion-slides>
 
         <ion-list class="clearbg sidemenu-list">
-            <p style="line-height:1.7em;font-size:20px;" translate>{{title | translate }}.</p>
-                <ion-select [(ngModel)]="language" (ionChange)="changeLanguage()">
-       <ion-option value="en" selected="true">English</ion-option>
-       <ion-option value="swa">Kiswahili</ion-option>
-       
-    </ion-select>
-        <button ion-button round color="primary" menuToggle right> Start
+            <p style="line-height:1.7em;font-size:20px;" translate>{{ "SIDEBAR.WELCOME_TEXT" | translate }}</p>
+
+        <button ion-button round color="primary" menuToggle right> {{ "SIDEBAR.START_BUTTON" | translate }}
             &nbsp;&nbsp;&nbsp;<ion-icon name="arrow-forward"></ion-icon>
         </button>
         
-        </ion-list>
-
-
-        
+            <!-- Show supported languages, hardcoded into English (en), French (fr), and Swahili (sw)
+            Note that the abbreviations are international standards and not arbitrary. More info here:
+             https://www.loc.gov/standards/iso639-2/php/code_list.php
+            -->
+            <ion-segment class='language-chooser' [(ngModel)]="globals.currentLanguage" color="primary" (ionChange)="changeLanguage($event)">
+                <ion-segment-button value="en">
+                English
+                </ion-segment-button>
+                <ion-segment-button value="fr">
+                French
+                </ion-segment-button>
+                <ion-segment-button value="sw">
+                Kiswahili
+                </ion-segment-button>
+            </ion-segment>
+        </ion-list> 
 
         <div class="footer-image">
             <img  src="./assets/imgs/logo_.png"  />

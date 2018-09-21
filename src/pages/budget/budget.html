@@ -26,7 +26,7 @@
         <ion-label text-wrap stacked color="primary">
            
             <h1 ion-text color="dark" translate>
-                {{ title1 | translate }}
+                {{ "TAB.BUDGET.TITLE" | translate }}
             </h1>
         </ion-label>
         
@@ -40,16 +40,19 @@
                      
                         <ion-item>
                             <ion-label text-wrap stacked color="primary" translate> 
-                                {{title2 | translate}}
+                                    {{ "TAB.BUDGET.MONTHLY_EARNING" | translate }}
                             </ion-label>
                             <ion-header>Monthly earnings</ion-header>
                             <ion-select [(ngModel)]="monthly_earnings">
-                                <ion-option value='' [disabled]="true">-- Select --</ion-option>
-                                <ion-option value="10000">Below 10,000</ion-option>
+                                <!-- The select heading still has problems, will fix it later
+                                for now you should work on the things that are possible on this page
+                                and get comfortable with the syntax  -->
+                                <ion-option value='' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
+                                <ion-option value="10000">{{ "AMOUNT_BELOW" | translate }} 10,000</ion-option>
                                 <ion-option value="10000-20000">10,000 - 20,000</ion-option>
                                 <ion-option value="20000-30000">20,000 - 40,000</ion-option>
                                 <ion-option value="40000-100000">40,000 - 100,000</ion-option>
-                                <ion-option value="100000">Above 100,000</ion-option>
+                                <ion-option value="100000">{{ "AMOUNT_ABOVE" | translate }} 100,000</ion-option>
                             </ion-select>
                         </ion-item>
                     </ion-col>
