@@ -2,14 +2,25 @@
 	"AMOUNT_ABOVE" : "Au dessus de",
 	"AMOUNT_BELOW" : "Ci-dessous",
 	"SELECT_HEADING" : "Sélectionner",
+	"YES_OPTION":"Oui",
+	"NO_OPTION":"non",
+	"NEXT":"prochain",
 	"SIDEBAR" : {
 		"WELCOME_TEXT" 		: "Bonjour, merci d'avoir pris le temps. Nous prévoyons d'ouvrir un salon de beauté et voulons entendre votre opinion.",
 		"START_BUTTON" : "Début"
 	},
 	"TAB": {
 		"BUDGET": {
-			"TITLE" : "Budget",
-			"MONTHLY_EARNING": "Combien gagnez-vous par mois (KES)?"
+			"TITLE" : "Budgété",
+			"MONTHLY_EARNING": "Combien gagnez-vous par mois (KES)?",
+			"BEUTY_BUDGET":"Budget pour la beauté par mois (KES)?",
+			"HAIRSTYLE_COST":"Une bonne coiffure devrait coûter(KES)?",
+			"lIKE_BOOK":" Souhaitez-vous pouvoir réserver des services de beauté à l'avance?",
+			"MANIC_COST":" Un bon combo manucure et pédicure devrait coûter (KES)?",
+			"MONTHLY_BEAUTY":"Combien avez-vous dépensé en beauté le mois dernier?"
+
+
+
 		}, 
 		"LIFESTYLE" : {
 			"TITLE" : "Mode de Vie"

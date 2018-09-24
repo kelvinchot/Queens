@@ -2,6 +2,9 @@
 	"AMOUNT_ABOVE" : "Above",
 	"AMOUNT_BELOW" : "Below",
 	"SELECT_HEADING" : "Select",
+	"YES_OPTION":"yes",
+	"NO_OPTION":"no",
+	"NEXT":"next",
 	"SIDEBAR" : {
 		"WELCOME_TEXT" 		: "Hello, thanks for taking the time. We are planning to launch a beauty parlour and want to hear your opinion.",
 		"START_BUTTON" : "Start"
@@ -9,7 +12,13 @@
 	"TAB": {
 		"BUDGET": {
 			"TITLE" : "Budget",
-			"MONTHLY_EARNING": "How much do you earn per month (KES)?"
+			"MONTHLY_EARNING": "How much do you earn per month (KES)?",
+			"BEUTY_BUDGET":"Budget for beauty per month (KES)?",
+			"HAIRSTYLE_COST":"A good hairstyle should cost (KES)?",
+			"lIKE_BOOK":" Would you like to be able to book beauty services in advance?",
+			"MANIC_COST":"A good manicure & pedicure combo should cost (KES)?",
+			"MONTHLY_BEAUTY":"How much did you spend on beauty last month?"
+			
 		}, 
 		"LIFESTYLE" : {
 			"TITLE" : "Lifestyle"

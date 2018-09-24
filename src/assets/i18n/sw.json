@@ -2,6 +2,9 @@
 	"AMOUNT_ABOVE" : "Zaidi ya",
 	"AMOUNT_BELOW" : "Chini ya",
 	"SELECT_HEADING" : "Chagua",
+	"YES_OPTION":"ndio",
+	"NO_OPTION":"hapana",
+	"NEXT":"endelea",
 	"SIDEBAR" : {
 		"WELCOME_TEXT" 		: "Habari, shukrani kwa kuchukua muda wako. Tuna mpango wa kufungua chumba cha mapambo (beauty parlour) na tungependa kusikia maoni yako.",
 		"START_BUTTON" : "Anza"
@@ -9,7 +12,14 @@
 	"TAB": {
 		"BUDGET": {
 			"TITLE" : "Bajeti",
-			"MONTHLY_EARNING": "Unapata pesa ngapi kwa mwezi (KES)?"
+			"MONTHLY_EARNING": "Unapata pesa ngapi kwa mwezi (KES)?",
+			"BEUTY_BUDGET":"Unatumia pesa ngapi kujirembesha kwa mwezi (KES)?",
+			"HAIRSTYLE_COST":"Aina mzuri ya Kusongwa nywele yafaa iwe pesa ngapi  (KES)?",
+			"lIKE_BOOK":" Je, waweza taka kuhifadhi huduma za kujirembesha mbeleni?",
+			"MANIC_COST":"Huduma mzuri za manicure na pedicure zafaa kuwa pesa ngapi (KES)?",
+			"MONTHLY_BEAUTY":"Ulitumia pesa ngapi kwenye manukato mwezi uliopita?"
+
+
 		}, 
 		"LIFESTYLE" : {
 			"TITLE" : "Maisha"
