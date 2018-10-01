@@ -38,6 +38,7 @@ export class MyApp {
   public changeLanguage(obj) : void
   {
      this._translate.use(this.globals.currentLanguage);
+     
   }
 
   /**

@@ -43,11 +43,11 @@
                                     {{ "TAB.BUDGET.MONTHLY_EARNING" | translate }}
                             </ion-label>
                             <ion-header>Monthly earnings</ion-header>
-                            <ion-select [(ngModel)]="monthly_earnings">
+                            <ion-select [(ngModel)]="monthly_earnings" placeholder="{{'SELECT_HEADING' | translate }}"   > 
                                 <!-- The select heading still has problems, will fix it later
                                 for now you should work on the things that are possible on this page
                                 and get comfortable with the syntax  -->
-                                <ion-option value='' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
+                                <ion-option value='2' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
                                 <ion-option value="10000">{{ "AMOUNT_BELOW" | translate }} 10,000</ion-option>
                                 <ion-option value="10000-20000">10,000 - 20,000</ion-option>
                                 <ion-option value="20000-30000">20,000 - 40,000</ion-option>
@@ -63,8 +63,8 @@
 
                                 
                             </ion-label>
-                            <ion-select [(ngModel)]="monthly_beauty_budget">
-                                 <ion-option value='' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
+                            <ion-select [(ngModel)]="monthly_beauty_budget" placeholder="{{'SELECT_HEADING' | translate }}">
+                                 <ion-option value='2' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
                                 <ion-option value="5000">{{ "AMOUNT_BELOW" | translate }} 5,000</ion-option>
                                 <ion-option value="5000-10000">5,000 - 10,000</ion-option>
                                 <ion-option value="10000-20000">10,000 - 20,000</ion-option>
@@ -80,8 +80,8 @@
 
                                 
                             </ion-label>
-                            <ion-select  [(ngModel)]="hairstyle_cost">
-                                <ion-option value='' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
+                            <ion-select  [(ngModel)]="hairstyle_cost" placeholder="{{'SELECT_HEADING' | translate }}">
+                                <ion-option value='2' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
                                 <ion-option value="100">{{ "AMOUNT_BELOW" | translate }} 100</ion-option>
                                 <ion-option value="100-300">100 - 300</ion-option>
                                 <ion-option value="300-700">300 - 700</ion-option>
@@ -98,8 +98,8 @@
                                 {{ "TAB.BUDGET.lIKE_BOOK" | translate }}
                                
                             </ion-label>
-                            <ion-select [(ngModel)]="advance_booking">
-                                 <ion-option value='' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
+                            <ion-select [(ngModel)]="advance_booking" placeholder="{{'SELECT_HEADING' | translate }}">
+                                 <ion-option value='2' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
                                 <ion-option value="0">{{"NO_OPTION" | translate}} </ion-option>
                                 <ion-option value="1">{{"YES_OPTION" | translate}}</ion-option>
                             </ion-select>
@@ -111,8 +111,8 @@
                                 
                                 {{ "TAB.BUDGET.MANIC_COST" | translate }}
                             </ion-label>
-                            <ion-select [(ngModel)]="manipedi_cost">
-                                <ion-option value='' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
+                            <ion-select [(ngModel)]="manipedi_cost" placeholder="{{'SELECT_HEADING' | translate }}">
+                                <ion-option value='2' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
                                 <ion-option value="100">{{ "AMOUNT_BELOW" | translate }} 100</ion-option>
                                 <ion-option value="100-300">100-300</ion-option>
                                 <ion-option value="300-700">300-700</ion-option>
@@ -128,8 +128,8 @@
                                 {{ "TAB.BUDGET.MONTHLY_BEAUTY" | translate }}
                                 
                             </ion-label>
-                            <ion-select [(ngModel)]="last_month_expense">
-                               <ion-option value='' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
+                            <ion-select [(ngModel)]="last_month_expense" placeholder="{{'SELECT_HEADING' | translate }}">
+                               <ion-option value='2' [disabled]="true">-- {{ "SELECT_HEADING" | translate }} --</ion-option>
                                 <ion-option value="5000">{{ "AMOUNT_BELOW" | translate }} 5,000</ion-option>
                                 <ion-option value="5000-10000">5,000 - 10,000</ion-option>
                                 <ion-option value="10000-20000">10,000 - 20,000</ion-option>

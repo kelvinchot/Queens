@@ -27,7 +27,6 @@ export class BudgetPage {
     advance_booking: string = "";
     manipedi_cost: string = "";
     last_month_expense: string = "";
-
     alreadySaved: false;
 
     budgetList: AngularFireList<any>;
@@ -37,6 +36,7 @@ export class BudgetPage {
         this.budgetList = afDatabase.list('/budget');
     }
 
+    
     ionViewDidLeave() {
         if (this.hasNulls()) {
             this.globals.showToast("Please answer all questions in the \'Budget\' tab");
@@ -45,6 +45,8 @@ export class BudgetPage {
             return;
         this.nextTab();
     }
+
+    
 
     hasNulls(): boolean {
         if (
